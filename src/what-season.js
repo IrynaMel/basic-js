@@ -14,9 +14,9 @@ const { NotImplementedError } = require("../extensions/index.js");
 function getSeason(date) {
   try {
     const month = date.getMonth();
-    if (date instanceof Date) {
-      throw new Error("Invalid date!");
-    }
+    // if (date instanceof Date) {
+    //   throw new Error("Invalid date!");
+    // }
     switch (true) {
       case month === 0 || month === 1 || month === 11:
         return "winter";
