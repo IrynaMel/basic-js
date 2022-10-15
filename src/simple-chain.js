@@ -25,7 +25,7 @@ const chainMaker = {
         isNaN(position) ||
         !position
       ) {
-        throw new ReferenceError("CORRECT");
+        throw new Error("You can't remove incorrect link!");
       } else {
         const first = this.chain.slice(0, position - 1);
         const second = this.chain.slice(position);
@@ -34,7 +34,7 @@ const chainMaker = {
       }
     } catch (error) {
       this.chain = [];
-      throw new NotImplementedError(error.message);
+      throw new Error(error.message);
     }
   },
   reverseChain() {

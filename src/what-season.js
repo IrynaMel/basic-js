@@ -12,27 +12,38 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 function getSeason(date) {
-  try {
+  // try{
+   if(Object.prototype.toString.call(date) === '[object Date]'){
+  }else{
+    // throw new Error("Invalid date!")
+    return 'Unable to determine the time of year!'
+  }
+// if(typeof (date.toDateString()) === 'string'){
+
+
+   
+   
     const month = date.getMonth();
-    // if (date instanceof Date) {
-    //   throw new Error("Invalid date!");
-    // }
+    
     switch (true) {
       case month === 0 || month === 1 || month === 11:
         return "winter";
 
       case month > 1 && month < 5:
         return "spring";
-      case month > 4 && month < 8:
+        case month > 4 && month < 8:
         return "summer";
       case month > 7 && month < 11:
+     
         return "autumn";
       default:
-        throw new Error("Invalid date!");
+        // throw new Error( "Invalid date!")
     }
-  } catch (error) {
-    throw new NotImplementedError(error.message);
-  }
+  // }else{
+  //     throw new Error( "Invalid date!")
+  //   }
+ 
+ 
 }
 
 module.exports = {
